@@ -1,0 +1,6 @@
+{
+  "name": "每日缪斯",
+  "description": "基于感官通感的个人微型美学策展工具，将您的心情或灵感实时转化为诗意引言、经典画作与古典音乐的心灵共鸣空间。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+SC:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", "Noto Serif SC", Georgia, "Source Han Serif SC", "Source Han Serif CN", serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Editorial Aesthetic linen/paper colors */
+  --color-canvas-bg: #F5F5F0; /* Warm linen soft paper */
+  --color-canvas-card: #EAE7E0; /* Warm sand cards */
+  --color-ink-dark: #1A1A1A; /* Pure elegant print black */
+  --color-ink-muted: #5A5A4A; /* Low-saturation muted ink */
+  --color-ink-light: #8A8A7A; /* Faded linen gray */
+  --color-border-editorial: #D1D1C1; /* Accent lines and borders */
+  --color-acc-sage: #5A5A40; /* Vintage sage */
+  --color-acc-terracotta: #A67C65; /* Terracotta soil */
+}
+
+/* Custom styles for physical, paper-like feeling */
+body {
+  font-family: var(--font-serif);
+  background-color: var(--color-canvas-bg);
+  color: var(--color-ink-dark);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Natural paper texture overlay matching Design HTML */
+.paper-texture-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: multiply;
+  background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+  z-index: 9999;
+}
+
+/* Scrollbar styling for delicate paper layout */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-canvas-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(26, 26, 26, 0.15);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(26, 26, 26, 0.3);
+}
+
+/* white frame photo border custom classes */
+.painting-frame {
+  box-shadow: 
+    0 1px 3px rgba(0,0,0,0.03), 
+    0 8px 20px -6px rgba(0,0,0,0.05);
+  border: 14px solid #ffffff;
+  outline: 1px solid var(--color-border-editorial);
+}
+
+/* Glassmorphism for floating input */
+.frosted-glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(26, 26, 26, 0.1);
+  box-shadow: 
+    0 4px 30px rgba(0, 0, 0, 0.02),
+    0 12px 36px -4px rgba(0, 0, 0, 0.04);
+}
+
+/* Shimmer animation for card skeleton loader */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer-bg {
+  background: linear-gradient(90deg, #EAE7E0 25%, #DDDBCF 50%, #EAE7E0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
